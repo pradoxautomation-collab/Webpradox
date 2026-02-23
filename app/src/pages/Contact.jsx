@@ -28,16 +28,12 @@ const Contact = () => {
         try {
             // NOTA: Para funcionar, você pode usar um serviço como Formspree.io ou um Webhook do N8N.
             // Vou configurar para enviar os dados para o endpoint.
-            const response = await fetch('https://formspree.io/f/xvgzpode', { // Endpoint temporário/exemplo (pode ser trocado por seu N8N)
+            const response = await fetch('https://n8n.pradoxautomation.com/form/ca513e09-f0e9-484f-9516-6b4454def801', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    ...formData,
-                    _subject: `Novo contato de ${formData.name} - Pradox Automation`,
-                    to: 'pradoxautomation@gmail.com'
-                })
+                body: JSON.stringify(formData)
             });
 
             if (response.ok) {
