@@ -30,10 +30,10 @@ const Footer = () => {
                 <div className="footer-social">
                     <h4>Redes Sociais</h4>
                     <div className="social-icons">
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FiInstagram size={24} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FiLinkedin size={24} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FiGithub size={24} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FiMail size={24} /></a>
+                        <a href="https://www.instagram.com/pradoxautomacao/" target="_blank" rel="noopener noreferrer"><FiInstagram size={24} /></a>
+                        <a href="https://www.linkedin.com/in/pradox-automation-undefined-08bb073a7/" target="_blank" rel="noopener noreferrer"><FiLinkedin size={24} /></a>
+                        <a href="https://github.com/pradoxautomation-collab" target="_blank" rel="noopener noreferrer"><FiGithub size={24} /></a>
+                        <a href="mailto:pradoxautomation@gmail.com"><FiMail size={24} /></a>
                     </div>
                 </div>
             </div>
