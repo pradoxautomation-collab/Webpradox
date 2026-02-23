@@ -26,7 +26,7 @@ const Contact = () => {
         setStatus('loading');
 
         try {
-            const response = await fetch('https://n8n.pradoxautomation.com/form/ca513e09-f0e9-484f-9516-6b4454def801', {
+            const response = await fetch('https://n8n.pradoxautomation.com/webhook/ca513e09-f0e9-484f-9516-6b4454def801', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
