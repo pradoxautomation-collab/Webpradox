@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FiMail, FiMapPin, FiPhone, FiMessageCircle, FiSend, FiCheckCircle, FiAlertCircle, FiLoader } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiPhone, FiMessageCircle, FiSend, FiCheckCircle, FiAlertCircle, FiLoader, FiInstagram, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -26,8 +26,6 @@ const Contact = () => {
         setStatus('loading');
 
         try {
-            // NOTA: Para funcionar, você pode usar um serviço como Formspree.io ou um Webhook do N8N.
-            // Vou configurar para enviar os dados para o endpoint.
             const response = await fetch('https://n8n.pradoxautomation.com/form/ca513e09-f0e9-484f-9516-6b4454def801', {
                 method: 'POST',
                 headers: {
@@ -52,130 +50,124 @@ const Contact = () => {
         <>
             <Helmet>
                 <title>Contato | Pradox Automation</title>
-                <meta name="description" content="Entre em contato com a Pradox Automation. Transforme seu negócio hoje mesmo com nossas soluções em automação, IA e web scraping." />
+                <meta name="description" content="Fale conosco para transformar seu negócio com automação inteligente, IA e web scraping." />
             </Helmet>
 
-            <section className="section animate-fade-in" style={{ paddingTop: '150px' }}>
+            <section className="section animate-fade-in" style={{ paddingTop: '150px', minHeight: '100vh' }}>
                 <div className="container">
-                    <div className="section-header text-center">
-                        <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem' }}>Fale com um Especialista</h1>
+                    <div className="section-header text-center" style={{ marginBottom: '4rem' }}>
+                        <h1 className="text-gradient" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Fale Conosco</h1>
                         <p className="hero-subtitle">Mapeamos seus processos e encontramos as melhores oportunidades de automação para o seu time.</p>
                     </div>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', marginTop: '3rem' }}>
-                        {/* Contact Info */}
-                        <div style={{ flex: '1 1 300px' }}>
-                            <div className="glass-card" style={{ marginBottom: '2rem' }}>
-                                <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <FiMessageCircle className="icon-accent-blue" /> Atendimento Direto
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+                        {/* Information Column */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                            <div className="glass-card">
+                                <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                                    <FiMessageCircle className="icon-accent-blue" /> Canais Diretos
                                 </h3>
-                                <p className="text-muted" style={{ marginBottom: '1.5rem' }}>
-                                    A forma mais rápida de iniciar o seu projeto é enviando uma mensagem para nossa equipe técnica via WhatsApp.
+                                <p className="text-muted" style={{ marginBottom: '2rem' }}>
+                                    Inicie um diálogo imediato com nossa equipe para acelerar a sua transformação digital.
                                 </p>
                                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%', background: 'linear-gradient(135deg, #25D366, #128C7E)' }}>
-                                    <FiMessageCircle size={20} /> Iniciar Conversa no WhatsApp
+                                    <FiMessageCircle size={20} /> WhatsApp Business
                                 </a>
                             </div>
 
                             <div className="glass-card">
-                                <h3 style={{ marginBottom: '1.5rem' }}>Informações Corporativas</h3>
-                                <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                                        <div style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px' }}><FiMail className="icon-accent-purple" size={20} /></div>
+                                <h3 style={{ marginBottom: '2rem' }}>Informações de Contato</h3>
+                                <ul style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                        <div style={{ padding: '12px', background: 'rgba(0, 240, 255, 0.1)', borderRadius: '12px' }}><FiMail className="icon-accent-blue" size={24} /></div>
                                         <div>
-                                            <p style={{ fontWeight: 'bold' }}>E-mail</p>
-                                            <p className="text-muted">pradoxautomation@gmail.com</p>
+                                            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>E-mail</p>
+                                            <p style={{ fontWeight: '600' }}>pradoxautomation@gmail.com</p>
                                         </div>
                                     </li>
-                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                                        <div style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px' }}><FiPhone className="icon-accent-blue" size={20} /></div>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                        <div style={{ padding: '12px', background: 'rgba(157, 0, 255, 0.1)', borderRadius: '12px' }}><FiPhone className="icon-accent-purple" size={24} /></div>
                                         <div>
-                                            <p style={{ fontWeight: 'bold' }}>Telefone / WhatsApp</p>
-                                            <p className="text-muted">+55 (11) 5286-3041</p>
-                                        </div>
-                                    </li>
-                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                                        <div style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px' }}><FiMapPin className="icon-accent-purple" size={20} /></div>
-                                        <div>
-                                            <p style={{ fontWeight: 'bold' }}>Sede</p>
-                                            <p className="text-muted">São Paulo - SP, Brasil<br />(Atendimento Global)</p>
-                                        </div>
-                                    </li>
-                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginTop: '1rem' }}>
-                                        <div style={{ display: 'flex', gap: '1rem' }}>
-                                            <a href="https://www.instagram.com/pradoxautomacao/" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiInstagram size={20} /></a>
-                                            <a href="https://www.linkedin.com/in/pradox-automation-undefined-08bb073a7/" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiLinkedin size={20} /></a>
-                                            <a href="https://github.com/pradoxautomation-collab" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiGithub size={20} /></a>
+                                            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Telefone</p>
+                                            <p style={{ fontWeight: '600' }}>+55 (11) 5286-3041</p>
                                         </div>
                                     </li>
                                 </ul>
+
+                                <div style={{ marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem', display: 'flex', gap: '1.5rem' }}>
+                                    <a href="https://www.instagram.com/pradoxautomacao/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', transition: '0.3s' }}>
+                                        <FiInstagram size={24} onMouseOver={(e) => e.target.style.color = 'var(--accent-blue)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'} />
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pradox-automation-undefined-08bb073a7/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', transition: '0.3s' }}>
+                                        <FiLinkedin size={24} onMouseOver={(e) => e.target.style.color = 'var(--accent-blue)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'} />
+                                    </a>
+                                    <a href="https://github.com/pradoxautomation-collab" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', transition: '0.3s' }}>
+                                        <FiGithub size={24} onMouseOver={(e) => e.target.style.color = 'var(--accent-blue)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'} />
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Contact Form */}
-                        <div style={{ flex: '1.5 1 400px' }} className="glass-card">
-                            <h2 style={{ marginBottom: '2rem' }}>Envie uma Mensagem</h2>
+                        {/* Form Column */}
+                        <div className="glass-card">
+                            <h2 style={{ marginBottom: '2rem' }}>Enviar Proposta</h2>
 
                             {status === 'success' ? (
-                                <div className="animate-fade-in" style={{ textAlign: 'center', padding: '2rem 0' }}>
-                                    <FiCheckCircle size={60} color="#00ff88" style={{ marginBottom: '1rem' }} />
-                                    <h3 style={{ color: '#00ff88' }}>Mensagem Enviada!</h3>
-                                    <p className="text-muted">Agradecemos o contato. Nossa equipe retornará em breve no seu e-mail.</p>
+                                <div className="animate-fade-in" style={{ textAlign: 'center', padding: '3rem 0' }}>
+                                    <FiCheckCircle size={80} color="#00ff88" style={{ marginBottom: '1.5rem' }} />
+                                    <h2 style={{ color: '#00ff88', marginBottom: '1rem' }}>Sucesso!</h2>
+                                    <p className="text-muted">Sua mensagem foi entregue diretamente ao nosso time técnico. Retornaremos em breve.</p>
                                     <button
                                         onClick={() => setStatus('idle')}
-                                        className="btn btn-primary"
-                                        style={{ marginTop: '2rem' }}
+                                        className="btn btn-outline"
+                                        style={{ marginTop: '2.5rem' }}
                                     >
-                                        Enviar outra mensagem
+                                        Novo Envio
                                     </button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit}>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                                        <div className="form-group">
-                                            <label className="form-label">Nome Completo</label>
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                className="form-input"
-                                                placeholder="Ex: João Silva"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="form-group">
-                                            <label className="form-label">Empresa</label>
-                                            <input
-                                                type="text"
-                                                name="company"
-                                                className="form-input"
-                                                placeholder="Ex: Acme Corp"
-                                                value={formData.company}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
-                                    </div>
-
                                     <div className="form-group">
-                                        <label className="form-label">E-mail Profissional</label>
+                                        <label className="form-label">Nome</label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            className="form-input"
+                                            placeholder="Seu nome"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label">E-mail</label>
                                         <input
                                             type="email"
                                             name="email"
                                             className="form-input"
-                                            placeholder="joao@empresa.com"
+                                            placeholder="seu@email.com"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
                                         />
                                     </div>
-
                                     <div className="form-group">
-                                        <label className="form-label">Como podemos ajudar?</label>
+                                        <label className="form-label">Empresa</label>
+                                        <input
+                                            type="text"
+                                            name="company"
+                                            className="form-input"
+                                            placeholder="Nome da sua empresa"
+                                            value={formData.company}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label">Mensagem</label>
                                         <textarea
                                             name="message"
                                             className="form-textarea"
-                                            placeholder="Descreva brevemente o seu desafio operacional..."
+                                            placeholder="Como podemos ajudar a automatizar seu negócio?"
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
@@ -183,19 +175,19 @@ const Contact = () => {
                                     </div>
 
                                     {status === 'error' && (
-                                        <p style={{ color: '#ff4d4d', fontSize: '0.9rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                            <FiAlertCircle /> Ocorreu um erro ao enviar. Tente novamente ou use o WhatsApp.
+                                        <p style={{ color: '#ff4d4d', fontSize: '0.9rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                            <FiAlertCircle /> Erro ao enviar. Tente novamente ou use o WhatsApp.
                                         </p>
                                     )}
 
                                     <button
                                         type="submit"
                                         className="btn btn-primary"
-                                        style={{ width: '100%', marginTop: '1rem', opacity: status === 'loading' ? 0.7 : 1 }}
+                                        style={{ width: '100%', marginTop: '1rem' }}
                                         disabled={status === 'loading'}
                                     >
                                         {status === 'loading' ? (
-                                            <>Enviando... <FiLoader className="animate-spin" /></>
+                                            <>Processando... <FiLoader className="animate-spin" /></>
                                         ) : (
                                             <>Enviar Mensagem <FiSend /></>
                                         )}

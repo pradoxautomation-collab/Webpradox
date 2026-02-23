@@ -6,17 +6,17 @@
   --bg-card: rgba(20, 20, 28, 0.7);
   --text-main: #f0f0f5;
   --text-muted: #a0a0b0;
-  
+
   /* Brand/Neon Accents */
   --accent-blue: #00f0ff;
   --accent-purple: #9d00ff;
   --accent-gradient: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  
+
   /* Shadows and Glows */
   --glow-blue: 0 0 20px rgba(0, 240, 255, 0.4);
   --glow-purple: 0 0 20px rgba(157, 0, 255, 0.4);
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  
+
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -36,11 +36,16 @@ body {
   overflow-x: hidden;
   /* Add a subtle dark mesh gradient background */
   background-image: radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.05), transparent 25%),
-                    radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.05), transparent 25%);
+    radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.05), transparent 25%);
   background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 800;
   line-height: 1.2;
@@ -105,7 +110,10 @@ ul {
 .btn-primary::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 50px;
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   z-index: -1;
@@ -154,12 +162,33 @@ ul {
 
 /* Animations */
 @keyframes fadeInData {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
   animation: fadeInData 0.8s ease forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 /* Form Elements */
@@ -175,7 +204,8 @@ ul {
   color: var(--text-muted);
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   padding: 1rem;
   background: rgba(255, 255, 255, 0.03);
@@ -186,7 +216,8 @@ ul {
   transition: all 0.3s ease;
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
   border-color: var(--accent-purple);
   box-shadow: var(--glow-purple);

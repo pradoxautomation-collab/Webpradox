@@ -29,7 +29,6 @@ const Navbar = () => {
                     <Link to="/services" className={`nav-link ${isActive('/services')}`} onClick={closeMenu}>Serviços</Link>
                     <Link to="/blog" className={`nav-link ${isActive('/blog')}`} onClick={closeMenu}>Blog</Link>
                     <Link to="/contact" className={`nav-link ${isActive('/contact')}`} onClick={closeMenu}>Contato</Link>
-                    <Link to="/contact" className="btn btn-primary nav-btn" onClick={closeMenu}>Fale Conosco</Link>
                 </nav>
             </div>
         </header>
