@@ -88,7 +88,7 @@ const Contact = () => {
                                         <div style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px' }}><FiMail className="icon-accent-purple" size={20} /></div>
                                         <div>
                                             <p style={{ fontWeight: 'bold' }}>E-mail</p>
-                                            <p className="text-muted">contato@pradoxautomation.com</p>
+                                            <p className="text-muted">pradoxautomation@gmail.com</p>
                                         </div>
                                     </li>
                                     <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
@@ -103,6 +103,13 @@ const Contact = () => {
                                         <div>
                                             <p style={{ fontWeight: 'bold' }}>Sede</p>
                                             <p className="text-muted">São Paulo - SP, Brasil<br />(Atendimento Global)</p>
+                                        </div>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginTop: '1rem' }}>
+                                        <div style={{ display: 'flex', gap: '1rem' }}>
+                                            <a href="https://www.instagram.com/pradoxautomacao/" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiInstagram size={20} /></a>
+                                            <a href="https://www.linkedin.com/in/pradox-automation-undefined-08bb073a7/" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiLinkedin size={20} /></a>
+                                            <a href="https://github.com/pradoxautomation-collab" target="_blank" rel="noopener noreferrer" className="social-icon-link"><FiGithub size={20} /></a>
                                         </div>
                                     </li>
                                 </ul>
